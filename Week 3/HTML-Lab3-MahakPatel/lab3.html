@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lab 3</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <main id="main">
+      <h1>CSS: The basics</h1>
+      <p>CSS (Cascading Style Sheets) is used for styling your HTML page.</p>
+      <p>Link your CSS to your HTML by adding the following line:</p>
+      <div>
+        <code>&lt;link rel="stylesheet" type="text/css" href="path-to-stylesheet.css"&gt;</code>
+      </div>
+      <p>There are many CSS properties but you should get a grasp of the basics.
+         With just basic CSS, you can already add a lot of styling to your page.</p>
+      <p>One important note about CSS is that you are defining a set of default rules and
+         <em>then</em> adding some restrictions/special case rules. In other words, you're
+         writing rules which say, I want my page (font, colours, borders) to look like this,
+         <strong>except for these special cases</strong> which have additional or slightly
+         different styles. The special cases are usually for classes and/or specific elements
+         by id (e.g. #main h2).</p>
+      <p>Some fun properties to try out on your own (look them up) are:</p>
+      <ul>
+        <li>
+          <code>text-shadow</code> for <a href="https://css-tricks.com/almanac/properties/t/text-shadow/">drop shadows for text</a>
+        </li>
+        <li>
+          <code>box-shadow</code> for <a href="https://css-tricks.com/almanac/properties/b/box-shadow/">drop shadows for element boxes</a>
+        </li>
+      </ul>
+      <footer>
+        <aside id="author">
+          <h2>About the author</h2>
+          <p>John Smith is a fiend for code and lives for CSS.</p>
+        </aside>
+        <section id="comments">
+          <h2>Comments</h2>
+          <p>Comments closed.</p>
+        </section>
+      </footer>
+    </main>
+    <footer id="footer">
+      <section>
+        <h2>Want to stay up to date?</h2>
+        <p>Sign up for our newsletter.</p>
+        <form method="post">
+          <label for="email">Your email:</label>
+          <input type="email" id="email" name="subscribe-email" placeholder="john.doe@example.com">
+          <button type="submit">Subscribe now</button>
+        </form>
+      </section>
+    </footer>
+  </body>
+</html>
