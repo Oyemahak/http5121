@@ -1,0 +1,149 @@
+/* Base Styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+}
+
+header h1 {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+}
+
+header h1 a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Main Content */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 6px;
+}
+
+/* Image Gallery */
+.image-gallery {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.gallery-image {
+  width: 32%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+/* About Section */
+#about-mahak {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+/* Comment Form */
+#comments {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#comments h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#comments form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#comments input, #comments textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#comments textarea {
+  height: 120px;
+}
+
+#comments button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#comments button:hover {
+  background-color: #1a1a1a;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #1a1a1a;
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+footer a {
+  color: #4a90e2;
+  text-decoration: none;
+}
