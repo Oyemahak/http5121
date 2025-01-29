@@ -1,4 +1,4 @@
-/* General styling for the page */
+/* first css lab work */
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
@@ -8,7 +8,7 @@ body {
   color: #333;
 }
 
-/* Heading styles */
+/* Headings */
 h1, h2 {
   font-family: 'Arial', sans-serif;
   color: #1a1a1a;
@@ -114,7 +114,7 @@ button:hover {
   background-color: #1a1a1a;
 }
 
-/* Adding spacing and styling to the aside and section */
+/* Adding spacing and styling to the aside and section for better adjustment */
 #author, #comments {
   margin: 20px auto;
   padding: 15px;
@@ -130,7 +130,7 @@ button:hover {
   font-weight: bold;
 }
 
-/* Extra padding for better spacing */
+/* Extra padding for better spacing in main */
 main {
   padding: 20px;
   background: #fff;
