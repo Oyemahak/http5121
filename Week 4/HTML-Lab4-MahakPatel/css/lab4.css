@@ -1,0 +1,74 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Flex Containers */
+#flex-1, #flex-2 {
+  margin: 1em 0;
+  background-color: purple;
+}
+
+/* Common Flex Items */
+.item {
+  background-color: yellow;
+  padding: 30px;
+}
+
+/* FLEX 1 */
+#flex-1 {
+  display: flex;           /* Enables flexbox */
+  justify-content: space-around; /* Spreads items */
+  align-items: flex-end;    /* Aligns items to bottom */
+  max-width: 500px;
+  height: 300px;
+  padding: 20px;
+}
+
+/* Style even-numbered items */
+#flex-1 .item:nth-child(even) {
+  align-self: center;  /* Center even items */
+}
+
+/* FLEX 2 */
+#flex-2 {
+  display: flex;
+  gap: 1.5em; /* Space between yellow boxes */
+  padding: 1em;
+}
+
+.triple, .single {
+  padding: 1em;
+  background-color: yellow;
+}
+
+/* Triple width */
+.triple {
+  flex-grow: 3;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Single width */
+.single {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+/* Nested Flexbox */
+#nested-flex {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping */
+  gap: 10px; /* Space between orange cards */
+  background-color: #bfa0bf;
+  padding: 1em;
+}
+
+/* Orange Cards */
+.card {
+  background-color: orange;
+  height: 150px;
+  flex-basis: 100px; /* Default width */
+  flex-grow: 1;
+}
