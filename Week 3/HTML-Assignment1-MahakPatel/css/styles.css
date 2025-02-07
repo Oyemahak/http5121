@@ -75,11 +75,11 @@ main {
 }
 
 /* About Section */
-#about-mahak {
+#about-me {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background: #f9f9f9;
+  background: white;
   border-radius: 6px;
 }
 
