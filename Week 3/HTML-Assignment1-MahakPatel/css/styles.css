@@ -44,13 +44,92 @@ nav ul li a {
   font-weight: bold;
 }
 
-/* Main Content */
+/* Main Content Layout */
 main {
-  max-width: 800px;
+  display: flex;  /* Added Flexbox */
+  justify-content: space-between;
+  max-width: 1240px; /* Increased width */
   margin: 20px auto;
   padding: 20px;
+}
+
+/* Article (Left Side) */
+article {
+  flex: 2; /* Takes more space */
   background: white;
+  padding: 20px;
   border-radius: 6px;
+  text-align: left; /* Align text to left */
+}
+
+/* Sidebar (Right Side) */
+aside {
+  flex: 1; /* Takes less space */
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+/* Trending Topics */
+.trending {
+  margin-bottom: 20px;
+}
+
+.trending h3 {
+  font-size: 1.3rem;
+  color: #1a1a1a;
+}
+
+.trending ul {
+  list-style: none;
+  padding: 0;
+}
+
+.trending ul li {
+  margin-bottom: 10px;
+}
+
+.trending ul li a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: bold;
+}
+.trending ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Subscribe Section */
+.subscribe {
+  text-align: center;
+  background: #4a90e2;
+  color: white;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.subscribe input {
+  width: 80%;
+  padding: 8px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.subscribe button {
+  background: white;
+  color: #333;
+  padding: 8px 15px;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.subscribe button:hover {
+  background-color: #1a1a1a;
+  color: white;
 }
 
 /* Image Gallery */
@@ -67,17 +146,12 @@ main {
   height: auto;
   border-radius: 8px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.gallery-image:hover {
-  transform: scale(1.05);
 }
 
 /* About Section */
 #about-me {
-  max-width: 800px;
-  margin: 20px auto;
+  max-width: 1200px;
+  margin: 40px auto;
   padding: 20px;
   background: white;
   border-radius: 6px;
@@ -85,7 +159,7 @@ main {
 
 /* Comment Form */
 #comments {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 40px auto;
   padding: 25px;
   background: white;
