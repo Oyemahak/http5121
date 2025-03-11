@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto+Condensed:ital,wght@0,300;0,700;1,700&display=swap');
+
+/********************************************************
+ * TABLE OF CONTENTS
+ * =================
+ * 1. GENERAL
+ * 2. LAYOUT
+ * 3. MENU
+ * 4. MAIN
+ * -- 4a. Articles
+ * -- 4b. Gallery
+ * 5. MEDIA QUERIES
+ */
+
+/* 1. GENERAL */
+:root {
+  --main-color: #2d3047;
+  --main-accent: #db5461;
+  --second-accent: #ffec51;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25em;
+  color: var(--main-color);
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+}
+
+a {
+  color: var(--main-accent);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#main section {
+  padding: 4em 1em;
+}
+
+/* 2. LAYOUT */
+#header, #main, #footer {
+  border: 1px solid #000;
+}
+
+#header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: var(--main-color);
+  font-family: "Roboto Condensed", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+#header a {
+  text-decoration: none;
+  color: var(--main-accent);
+}
+
+#header a:hover {
+  color: var(--second-accent);
+}
+
+#site-name {
+  text-transform: uppercase;
+}
+
+#footer {
+  text-align: center;
+  background-color: var(--main-color);
+  color: var(--second-accent);
+  padding: 1em;
+}
+
+#copyright {
+  font-size: 0.7em;
+}
+
+/* 3. MENU */
+#main-menu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  column-gap: 2em;
+  font-style: normal;
+  font-weight: 300;
+  list-style: none;
+}
+
+/* 4. MAIN */
+#main {
+  text-align: center;
+}
+
+.feature {
+  padding: 4em 2em;
+  background-color: var(--second-accent);
+  color: var(--main-color);
+}
+
+/* -- 4a. Articles */
+.articles-container {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 700px;
+  margin: 0 auto; /* center */
+}
+
+.article {
+  flex: 1 0 0;
+  padding: 1em;
+}
+
+.article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1em;
+}
+
+/* -- 4b. Gallery */
+#gallery {
+  background-color: var(--main-accent);
+}
+
+.gallery-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto; /* center the container */
+}
+
+.item {
+  height: 175px;
+  background-color: #aaa;
+  color: #000;
+  text-align: center;
+  flex: 0 0 25%;
+  border: 5px solid var(--main-accent);
+}
+
+.item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+}
+
+/* 5. MEDIA QUERIES */
+
+/* Tablet Breakpoint (768px) */
+@media screen and (max-width: 768px) {
+  /* Make the third article full width */
+  .articles-container .article:nth-child(3) {
+    flex: 1 0 100%;
+  }
+
+  /* Change gallery to two columns */
+  .gallery-container .item {
+    flex: 0 0 50%;
+  }
+}
+
+/* Phone Breakpoint (480px) */
+@media screen and (max-width: 480px) {
+  /* Stack menu links */
+  #main-menu ul {
+    flex-direction: column;
+    row-gap: 1em;
+  }
+
+  /* Make all articles full width */
+  .articles-container .article {
+    flex: 1 0 100%;
+  }
+
+  /* Make gallery items full width */
+  .gallery-container .item {
+    flex: 0 0 100%;
+  }
+}
