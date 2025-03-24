@@ -230,15 +230,14 @@ header h1 {
     flex: 1 1 calc(33.333% - 32px); /* 3 columns for desktop */
     background-color: #2D3748;
     border-radius: 8px;
-    padding: 16px;
+    padding: 32px;
     text-align: left; /* Left-align text */
     box-sizing: border-box;
 }
 
 .project img {
     width: 100%;
-    border-radius: 8px;
-    margin-bottom: 16px;
+    border-radius: 4px;
 }
 
 .project h3 {
@@ -267,13 +266,13 @@ header h1 {
 }
 
 .contact-header {
-    margin: 0 auto;
+    text-align: center;
 }
 
 .contact-description {
-    margin: 0 auto;
     color: #FFF;
     font-size: 16px;
+    text-align: center;
 }
 
 form {
@@ -287,13 +286,15 @@ form {
 form label {
     font-size: 16px;
     color: #ffffff;
+    width: 782px;
+    height: 48px;
     text-align: left; /* Left-align labels */
 }
 
 form input, form textarea {
     padding: 16px;
     border: 1px solid #4B5563;
-    border-radius: 5px;
+    border-radius: 4px;
     background-color: #1F2937;
     color: #ffffff;
     width: 100%; /* Full width for inputs */
@@ -347,16 +348,16 @@ form input, form textarea {
 
 /* Social Links */
 .social-links {
-    margin-top: 32px;
+    letter-spacing: 0.36px;
     text-align: center;
 }
 
 .social-links p {
-    color: #585D68;
+    color: #ffffff;
 }
 
 .social-links a {
-    color: #60A5FA;
+    color: #3C82F6;
     text-decoration: none;
 }
 
@@ -373,10 +374,11 @@ footer {
 }
 
 .copyright{
-text-align: center;
-font-size: 14px;
-font-weight: 300;
-letter-spacing: 0.28px;
+    margin-top: 32px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.28px;
 }
 
 /* Responsive Styles */
