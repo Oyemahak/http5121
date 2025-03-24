@@ -39,14 +39,15 @@
             <p><i>Scroll Down</i> to explore my projects and see how I bring creativity and precision to every line of
                 code.</p>
             <button class="resume-button">Resume</button>
-            <p class="connect">Connect with me:
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
+            <div class="connect-container">
+                <p class="connect">Connect with me:</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-            </p>
         </div>
         <div class="intro-right">
             <img src="images/profile-image.png" alt="Mahak Patel">
@@ -127,25 +128,23 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="contact-container">
+            <h2 class="contact-header">Get in Touch</h2>
+            <p class="contact-description">Have a question or want to work together? I'd love to hear from you.</p>
             <form>
-                <div>
-                    <h2 class="contact-header">Get in Touch</h2>
-                    <p class="contact-description">Have a question or want to work together? I'd love to hear from you.
-                    </p>
-                </div>
-                <div>
+                <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Hey, what’s your first name?">
+                </div>
+                <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Drop your email here. I promise no spam!">
+                </div>
+                <div class="form-group">
                     <label for="message">Message</label>
                     <textarea id="message" name="message"
                         placeholder="Tell me all the things! (Or just a quick hello.)"></textarea>
                 </div>
-                <div>
-                    <button type="submit" class="send-message-button">Send Message</button>
-                </div>
-
+                <button type="submit" class="send-message-button">Send Message</button>
             </form>
         </div>
     </section>

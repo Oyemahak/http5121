@@ -46,7 +46,6 @@ header {
     align-items: center;
     width: 100%;
     padding: 32px;
-    
 }
 
 header h1 {
@@ -55,7 +54,7 @@ header h1 {
     color: #ffffff; /* White color for the name */
 }
 
-.logo{
+.logo {
     margin: 0;
     width: 32px;
     height: 32px;
@@ -63,7 +62,9 @@ header h1 {
 
 .role {
     font-weight: 400;
-    color:#3C82F6;
+    color: #3C82F6;
+    text-align: center; /* Center the "Web Developer" text */
+    flex: 1; /* Ensure it takes up space to center properly */
 }
 
 .desktop-menu {
@@ -123,20 +124,25 @@ header h1 {
     letter-spacing: 0.36px;
 }
 
-.intro-left .connect {
+.connect-container {
+    display: flex;
+    align-items: center; /* Align "Connect with me" and icons in one line */
+    gap: 16px; /* Space between text and icons */
+    margin-top: 32px;
+}
+
+.connect {
     font-size: 18px;
     color: #585D68;
-    padding: 16px 0px;
 }
 
 .social-icons {
     display: flex;
     gap: 16px;
-    margin: 32px 0;
 }
 
 .social-icons a {
-    color: #60A5FA;
+    color: #585D68; /* Same color as "Connect with me" text */
     font-size: 1.5rem;
     text-decoration: none;
 }
@@ -176,12 +182,12 @@ header h1 {
 .worked-for-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 34px; /* 34px spacing between company images */
     justify-content: center;
 }
 
 .company {
-    flex: 1 1 calc(25% - 40px); /* 4 columns for desktop */
+    flex: 1 1 calc(25% - 34px); /* 4 columns for desktop */
     text-align: center;
 }
 
@@ -189,6 +195,7 @@ header h1 {
     width: 100%;
     max-width: 150px;
     border-radius: 8px;
+    height: auto; /* Ensure height is consistent */
 }
 
 /* Carousel Arrows for Mobile */
@@ -211,12 +218,6 @@ header h1 {
 /* Featured Projects Section */
 #projects {
     background-color: transparent; /* No container for projects */
-}
-
-.projects-container {
-    background-color: #1F2937;
-    border-radius: 8px;
-    padding: 32px;
 }
 
 .projects-grid {
@@ -267,27 +268,33 @@ header h1 {
 
 .contact-header {
     text-align: center;
+    margin-bottom: 8px; /* 8px spacing between header and description */
 }
 
 .contact-description {
     color: #FFF;
     font-size: 16px;
     text-align: center;
+    margin-bottom: 32px; /* Spacing below description */
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px; /* 14px spacing between label and input */
     max-width: 720px;
     margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Spacing between label and input */
 }
 
 form label {
     font-size: 16px;
     color: #ffffff;
-    width: 782px;
-    height: 48px;
     text-align: left; /* Left-align labels */
 }
 
@@ -302,7 +309,7 @@ form input, form textarea {
 }
 
 /* Buttons (Resume and Send Message) */
-.resume-button {
+.resume-button, .send-message-button {
     width: 170px;
     height: 48px;
     flex-shrink: 0;
@@ -315,22 +322,6 @@ form input, form textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.send-message-button {
-    width: 170px;
-    height: 48px;
-    flex-shrink: 0;
-    border-radius: 4px;
-    background: #3C82F6;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
 }
 
 .resume-button:hover, .send-message-button:hover {
@@ -373,7 +364,7 @@ footer {
     padding: 32px 0;
 }
 
-.copyright{
+.copyright {
     margin-top: 32px;
     text-align: center;
     font-size: 14px;
