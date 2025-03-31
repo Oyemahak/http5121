@@ -4,20 +4,15 @@ body {
     margin: 0;
     padding: 0;
     line-height: 28px;
-    /* 175% */
     color: #ffffff;
-    /* White text for contrast */
     background-color: #101827;
-    /* Background color for the whole page */
 }
 
 section {
     padding: 16px 0px;
-    /* Increased padding for better spacing */
     max-width: 1190px;
     margin: 0 auto;
     background-color: #1F2937;
-    /* Container background color */
     border-radius: 8px;
 }
 
