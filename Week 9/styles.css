@@ -91,7 +91,6 @@ header {
 
 .mobile-menu-icon {
     display: none;
-    font-size: 1.5rem;
     color: #ffffff;
     cursor: pointer;
 }
@@ -171,7 +170,7 @@ header {
 }
 
 .intro-right img {
-    width: 100%;
+    max-width: 100%;
     border-radius: 8px;
 }
 
@@ -210,7 +209,7 @@ header {
 }
 
 .company-14 img {
-    width: 186px;
+    max-width: 186px;
     border-radius: 8px;
     height: 100px;
     /* Ensure height is consistent */
@@ -218,7 +217,7 @@ header {
 }
 
 .company-23 img {
-    width: 326px;
+    max-width: 326px;
     border-radius: 8px;
     height: 100px;
     /* Ensure height is consistent */
@@ -230,17 +229,13 @@ header {
     display: none;
     /* Hidden by default */
     justify-content: space-between;
-    margin-top: 32px;
 }
 
 .carousel-arrows button {
-    background-color: #ffffff;
+    background-color: transparent;
     color: #60A5FA;
     border: none;
-    padding: 16px 32px;
-    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
 }
 
 /* Featured Projects Section */
@@ -268,7 +263,7 @@ header {
 }
 
 .project img {
-    width: 100%;
+    max-width: 100%;
     border-radius: 4px;
 }
 
@@ -343,7 +338,7 @@ form textarea {
     border-radius: 4px;
     background-color: #1F2937;
     color: #ffffff;
-    width: 100%;
+    max-width: 100%;
     /* Full width for inputs */
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
@@ -436,11 +431,9 @@ footer {
 
     section {
         padding: 16px 0px;
-        /* Increased padding for better spacing */
         max-width: 720px;
         margin: 0 auto;
         background-color: #1F2937;
-        /* Container background color */
         border-radius: 8px;
     }
 
@@ -567,11 +560,11 @@ footer {
     }
 
     .company-14 img {
-        width: 110px;
+        max-width: 110px;
     }
 
     .company-23 img {
-        width: 190px;
+        max-width: 190px;
     }
 
     .projects-grid {
@@ -589,11 +582,12 @@ footer {
     }
 
 
-/* Contact Section */
+    /* Contact Section */
 
     #contact {
         padding: 48px 0;
     }
+
     .contact-container {
         padding: 24px;
     }
@@ -613,8 +607,7 @@ footer {
     }
 
     form {
-        width: 510px;
-        max-width: 704px;
+        max-width: 510px;
     }
 
     .separator {
@@ -629,7 +622,7 @@ footer {
 
 /* Mobile Styles (320px) */
 @media (max-width: 320px) {
-    
+
     section {
         max-width: 288px;
     }
@@ -733,7 +726,7 @@ footer {
     #worked-for {
         padding: 24px 0px;
     }
-    
+
     .worked-for-grid {
         display: none;
         /* Hide grid for mobile */
@@ -749,7 +742,7 @@ footer {
     .project h3 {
         font-size: 20px;
     }
-    
+
     .project p {
         font-size: 12px;
     }
@@ -767,57 +760,56 @@ footer {
         /* Show carousel arrows for mobile */
     }
 
-/* Contact Section */
+    /* Contact Section */
 
-#contact {
-    padding: 24px 0px;
-}
+    #contact {
+        padding: 24px 0px;
+    }
 
-.contact-description {
-    font-size: 12px;
-    margin-bottom: 24px;
-}
+    .contact-description {
+        font-size: 12px;
+        margin-bottom: 24px;
+    }
 
-form {
-    width: 237px;
-    gap: 16px;
-    max-width: 288px;
-    margin-bottom: 24px;
-}
+    form {
+        gap: 16px;
+        max-width: 237px;
+        margin-bottom: 24px;
+    }
 
-.form-group {
-    gap: 8px;
-}
+    .form-group {
+        gap: 8px;
+    }
 
-form label {
-    font-size: 12px;
-}
+    form label {
+        font-size: 12px;
+    }
 
-form input,
-form textarea {
-    padding: 12px;
-}
+    form input,
+    form textarea {
+        padding: 12px;
+    }
 
-.send-message-button {
-    font-size: 12px;
-}
+    .send-message-button {
+        font-size: 12px;
+    }
 
-/* Separator Line */ 
-.separator {
-    width: 288px;
-}
+    /* Separator Line */
+    .separator {
+        max-width: 288px;
+    }
 
-/* Footer */
-footer {
-    padding: 16px 16px;
-}
+    /* Footer */
+    footer {
+        padding: 16px 16px;
+    }
 
-.social-links {
-    font-size: 12px;
-}
+    .social-links {
+        font-size: 12px;
+    }
 
-.copyright {
-    margin-top: 12px;
-    font-size: 10px;
-}
+    .copyright {
+        margin-top: 12px;
+        font-size: 10px;
+    }
 }
