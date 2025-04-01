@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahak Patel - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -82,9 +80,13 @@
                     <img src="images/company4.png" alt="Company 4">
                 </div>
             </div>
-            <!-- Carousel Arrows for Mobile -->
+            <!-- Carousel Arrows for Mobile. Using HTML entity (>) & (<)for right & left Carousel - lightweight and accessible -->
             <div class="carousel-arrows">
                 <button class="arrow-left">&#10094;</button>
+                <!-- Worked for Mobile -->
+                <div class="worked-for-mobile">
+                    <img class="mobile-companies-img" src="images/Citi.png" alt="Citi">
+                </div>
                 <button class="arrow-right">&#10095;</button>
             </div>
         </div>
@@ -152,8 +154,10 @@
                     <textarea id="message" name="message"
                         placeholder="Tell me all the things! (Or just a quick hello.)"></textarea>
                 </div>
+                <div>
+                    <button type="submit" class="send-message-button">Send Message</button>
+                </div>
             </form>
-            <button type="submit" class="send-message-button">Send Message</button>
         </div>
     </section>
 

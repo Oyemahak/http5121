@@ -1,4 +1,8 @@
-/* General Styles */
+/* ============================================= */
+/*              GLOBAL STYLES                    */
+/* ============================================= */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 body {
     font-family: "Open Sans", sans-serif;
     margin: 0;
@@ -24,7 +28,9 @@ h2 {
     line-height: normal;
 }
 
-/* Header Styles */
+/* ============================================= */
+/*              HEADER STYLES                    */
+/* ============================================= */
 header {
     background-color: #000000;
     position: sticky;
@@ -95,7 +101,9 @@ header {
     cursor: pointer;
 }
 
-/* First Section: Two-Column Layout */
+/* ============================================= */
+/*              INTRODUCTION SECTION             */
+/* ============================================= */
 #intro {
     max-width: 1126px;
     display: flex;
@@ -103,9 +111,7 @@ header {
     align-items: center;
     padding: 48px 24px;
     background-color: transparent;
-    /* No container for intro */
     line-height: 28px;
-    /* 155.556% */
     letter-spacing: 0.36px;
 }
 
@@ -135,9 +141,7 @@ header {
 .connect-container {
     display: flex;
     align-items: center;
-    /* Align "Connect with me" and icons in one line */
     gap: 16px;
-    /* Space between text and icons */
     margin-top: 32px;
 }
 
@@ -153,7 +157,6 @@ header {
 
 .social-icons a {
     color: #585D68;
-    /* Same color as "Connect with me" text */
     font-size: 1.5rem;
     text-decoration: none;
 }
@@ -179,11 +182,11 @@ header {
     color: #585D68;
 }
 
-/* Worked For Section */
-
+/* ============================================= */
+/*              WORKED FOR SECTION               */
+/* ============================================= */
 #worked-for {
     background-color: transparent;
-    /* No container for worked-for */
 }
 
 .worked-for-container {
@@ -196,23 +199,25 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 34px;
-    /* 34px spacing between company images */
     justify-content: center;
 }
 
 .company-14 {
+    display: flex;
     text-align: center;
+    align-items: center;
 }
 
 .company-23 {
+    display: flex;
     text-align: center;
+    align-items: center;
 }
 
 .company-14 img {
     max-width: 186px;
     border-radius: 8px;
     height: 100px;
-    /* Ensure height is consistent */
     object-fit: contain;
 }
 
@@ -220,14 +225,11 @@ header {
     max-width: 326px;
     border-radius: 8px;
     height: 100px;
-    /* Ensure height is consistent */
     object-fit: contain;
 }
 
-/* Carousel Arrows for Mobile */
 .carousel-arrows {
     display: none;
-    /* Hidden by default */
     justify-content: space-between;
 }
 
@@ -238,10 +240,20 @@ header {
     cursor: pointer;
 }
 
-/* Featured Projects Section */
+.worked-for-mobile {
+    display: none;
+}
+.mobile-companies-img {
+    width: 100%;
+    max-width: 162px;
+    height: auto;
+}
+
+/* ============================================= */
+/*              PROJECTS SECTION                 */
+/* ============================================= */
 #projects {
     background-color: transparent;
-    /* No container for projects */
 }
 
 .projects-grid {
@@ -253,12 +265,10 @@ header {
 
 .project {
     flex: 1 1 calc(33.333% - 32px);
-    /* 3 columns for desktop */
     background-color: #2D3748;
     border-radius: 8px;
     padding: 32px;
     text-align: left;
-    /* Left-align text */
     box-sizing: border-box;
 }
 
@@ -280,7 +290,9 @@ header {
     font-weight: 400;
 }
 
-/* Contact Section */
+/* ============================================= */
+/*              CONTACT SECTION                  */
+/* ============================================= */
 #contact {
     background-color: transparent;
     padding: 48px 24px;
@@ -304,14 +316,12 @@ header {
     text-align: center;
     margin: 0;
     margin-bottom: 32px;
-    /* Spacing below description */
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    /* 14px spacing between label and input */
     max-width: 720px;
     margin: 0 auto;
     margin-bottom: 32px;
@@ -321,31 +331,32 @@ form {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    /* Spacing between label and input */
 }
 
 form label {
     font-size: 16px;
     color: #ffffff;
     text-align: left;
-    /* Left-align labels */
 }
 
 form input,
 form textarea {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
     padding: 16px;
     border: 1px solid #4B5563;
     border-radius: 4px;
     background-color: #1F2937;
     color: #ffffff;
     max-width: 100%;
-    /* Full width for inputs */
     box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
 }
 
-/* Buttons (Resume and Send Message) */
+/* ============================================= */
+/*              BUTTON STYLES                    */
+/* ============================================= */
 .resume-button {
+
     width: 170px;
     height: 48px;
     flex-shrink: 0;
@@ -361,7 +372,9 @@ form textarea {
 }
 
 .send-message-button {
-    margin: auto;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
     width: 170px;
     height: 48px;
     flex-shrink: 0;
@@ -381,7 +394,9 @@ form textarea {
     background: #1670ff;
 }
 
-/* Separator Line */
+/* ============================================= */
+/*              MISC ELEMENTS                    */
+/* ============================================= */
 .separator {
     margin-left: auto;
     margin-right: auto;
@@ -390,7 +405,6 @@ form textarea {
     background-color: #4B5563;
 }
 
-/* Social Links */
 .social-links {
     font-size: 18px;
     letter-spacing: 0.36px;
@@ -410,7 +424,9 @@ form textarea {
     text-decoration: underline;
 }
 
-/* Footer */
+/* ============================================= */
+/*              FOOTER STYLES                    */
+/* ============================================= */
 footer {
     background-color: transparent;
     color: #ffffff;
@@ -421,14 +437,17 @@ footer {
 .copyright {
     margin-top: 32px;
     text-align: center;
+    letter-spacing: 0.24px;
     font-size: 14px;
     font-weight: 300;
     letter-spacing: 0.28px;
 }
 
-/* Responsive Styles */
+/* ============================================= */
+/*              TABLET MEDIA QUERY               */
+/*              (max-width: 768px)               */
+/* ============================================= */
 @media (max-width: 768px) {
-
     section {
         padding: 16px 0px;
         max-width: 720px;
@@ -444,6 +463,7 @@ footer {
         line-height: normal;
     }
 
+    /* Header adjustments */
     header {
         top: 32px;
         height: 48px;
@@ -490,6 +510,7 @@ footer {
         display: flex;
     }
 
+    /* Intro section adjustments */
     #intro {
         gap: 48px;
         max-width: 664px;
@@ -510,6 +531,7 @@ footer {
     }
 
     .intro-left .bio {
+        letter-spacing: 0.24px;
         font-size: 14px;
     }
 
@@ -518,6 +540,7 @@ footer {
     }
 
     .connect {
+        letter-spacing: 0.24px;
         font-size: 14px;
     }
 
@@ -533,6 +556,8 @@ footer {
     }
 
     .intro-right .cta {
+        line-height: normal;
+        letter-spacing: 0.24px;
         font-size: 12px;
         color: #585D68;
     }
@@ -540,11 +565,11 @@ footer {
     .resume-button {
         width: 120px;
         height: 32px;
+        letter-spacing: 0.24px;
         font-size: 14px;
     }
 
-    /* Worked For Section */
-
+    /* Worked For adjustments */
     #worked-for {
         padding: 24px 0px;
     }
@@ -555,7 +580,6 @@ footer {
 
     .worked-for-grid {
         gap: 24px;
-        /* 24px spacing between company images */
         justify-content: center;
     }
 
@@ -581,9 +605,7 @@ footer {
         object-fit: cover;
     }
 
-
-    /* Contact Section */
-
+    /* Contact section adjustments */
     #contact {
         padding: 48px 0;
     }
@@ -603,6 +625,7 @@ footer {
     .send-message-button {
         width: 146px;
         height: 32px;
+        letter-spacing: 0.24px;
         font-size: 14px;
     }
 
@@ -617,12 +640,13 @@ footer {
     .social-links {
         font-size: 16px;
     }
-
 }
 
-/* Mobile Styles (320px) */
+/* ============================================= */
+/*              MOBILE MEDIA QUERY               */
+/*              (max-width: 320px)               */
+/* ============================================= */
 @media (max-width: 320px) {
-
     section {
         max-width: 288px;
     }
@@ -631,6 +655,7 @@ footer {
         font-size: 16px;
     }
 
+    /* Header adjustments */
     header {
         top: 16px;
         height: 32px;
@@ -658,6 +683,7 @@ footer {
     }
 
     .role {
+        width: 86px;
         font-size: 12px;
     }
 
@@ -681,10 +707,9 @@ footer {
         display: flex;
     }
 
-    /* Mobile Intro Section CSS */
-
+    /* Intro section adjustments */
     #intro {
-        padding: 24px 24px;
+        padding: 32px 24px;
         display: block;
     }
 
@@ -702,6 +727,8 @@ footer {
     }
 
     .intro-left .bio {
+        margin: 24px 0;
+        letter-spacing: 0.24px;
         font-size: 12px;
     }
 
@@ -721,22 +748,22 @@ footer {
         font-size: 12px;
     }
 
-    /* Mobile Worked For */
-
+    /* Worked For adjustments */
     #worked-for {
         padding: 24px 0px;
     }
 
     .worked-for-grid {
         display: none;
-        /* Hide grid for mobile */
+    }
+    
+    .worked-for-mobile {
+        display: flex;
     }
 
-    /* Mobile Featured Project */
-
+    /* Projects adjustments */
     .project {
         flex: 1 1 288px;
-        /* 1 column for mobile */
     }
 
     .project h3 {
@@ -744,6 +771,7 @@ footer {
     }
 
     .project p {
+        letter-spacing: 0.24px;
         font-size: 12px;
     }
 
@@ -757,16 +785,15 @@ footer {
 
     .carousel-arrows {
         display: flex;
-        /* Show carousel arrows for mobile */
     }
 
-    /* Contact Section */
-
+    /* Contact section adjustments */
     #contact {
         padding: 24px 0px;
     }
 
     .contact-description {
+        letter-spacing: 0.24px;
         font-size: 12px;
         margin-bottom: 24px;
     }
@@ -782,29 +809,34 @@ footer {
     }
 
     form label {
+        letter-spacing: 0.24px;
         font-size: 12px;
     }
 
     form input,
     form textarea {
+        font-size: 10px;
         padding: 12px;
     }
 
     .send-message-button {
+        margin-top: 8px;
+        letter-spacing: 0.24px;
         font-size: 12px;
     }
 
-    /* Separator Line */
+    /* Separator adjustments */
     .separator {
         max-width: 288px;
     }
 
-    /* Footer */
+    /* Footer adjustments */
     footer {
         padding: 16px 16px;
     }
 
     .social-links {
+        letter-spacing: 0.24px;
         font-size: 12px;
     }
 
