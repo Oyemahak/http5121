@@ -152,12 +152,12 @@ header {
 
 .social-icons {
     display: flex;
-    gap: 16px;
+    gap: 24px;
 }
 
 .social-icons a {
     color: #585D68;
-    font-size: 1.5rem;
+    font-size: 32px;
     text-decoration: none;
 }
 
@@ -169,7 +169,6 @@ header {
     flex: 1;
     text-align: center;
     max-width: 406px;
-    -ms-flex-align: end;
 }
 
 .intro-right img {
@@ -215,14 +214,14 @@ header {
 }
 
 .company-14 img {
-    max-width: 186px;
+    max-width: 100%;
     border-radius: 8px;
     height: 100px;
     object-fit: contain;
 }
 
 .company-23 img {
-    max-width: 326px;
+    max-width: 100%;
     border-radius: 8px;
     height: 100px;
     object-fit: contain;
@@ -240,9 +239,6 @@ header {
     cursor: pointer;
 }
 
-.worked-for-mobile {
-    display: none;
-}
 .mobile-companies-img {
     width: 100%;
     max-width: 162px;
@@ -407,12 +403,9 @@ form textarea {
 
 .social-links {
     font-size: 18px;
+    color: #ffffff;
     letter-spacing: 0.36px;
     text-align: center;
-}
-
-.social-links p {
-    color: #ffffff;
 }
 
 .social-links a {
@@ -516,11 +509,6 @@ footer {
         max-width: 664px;
     }
 
-    .intro-container {
-        flex-direction: row;
-        gap: 48px;
-    }
-
     .intro-left {
         text-align: left;
         max-width: 348px;
@@ -542,6 +530,14 @@ footer {
     .connect {
         letter-spacing: 0.24px;
         font-size: 14px;
+    }
+
+    .social-icons {
+        gap: 12px;
+    }
+    
+    .social-icons a {
+        font-size: 24px;
     }
 
     .intro-right {
@@ -703,18 +699,10 @@ footer {
         gap: 16px;
     }
 
-    .desktop-menu.active {
-        display: flex;
-    }
-
     /* Intro section adjustments */
     #intro {
         padding: 32px 24px;
         display: block;
-    }
-
-    .intro-container {
-        flex-direction: column;
     }
 
     .intro-left {
