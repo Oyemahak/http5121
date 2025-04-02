@@ -641,6 +641,143 @@ footer {
 }
 
 /* ============================================= */
+/*              OPTIMIZED MID-RANGE VIEW         */
+/*     (min-width: 321px) and (max-width: 767px) */
+/* ============================================= */
+@media (min-width: 321px) and (max-width: 767px) {
+    section {
+        max-width: 320px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    /* Header adjustments */
+    header {
+        top: 16px;
+        height: 32px;
+        max-width: 320px;
+        border-radius: 32px;
+    }
+
+    .header-col {
+        display: flex;
+        height: 16px;
+        align-items: center;
+    }
+
+    .header-grid {
+        padding: 0 16px;
+    }
+
+    .header-container {
+        padding: 0 16px;
+    }
+
+    .logo {
+        width: 16px;
+        height: 16px;
+    }
+
+    .role {
+        width: 120px;
+        font-size: 14px;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .desktop-menu {
+        display: none;
+        position: absolute;
+        top: 48px;
+        right: 16px;
+        background-color: #1F2937;
+        flex-direction: column;
+        padding: 16px;
+        border-radius: 8px;
+        gap: 16px;
+    }
+
+    /* Intro section adjustments */
+    #intro {
+        padding: 32px 24px;
+        display: block;
+    }
+
+    .intro-left {
+        max-width: 320px;
+        text-align: left;
+    }
+
+    .intro-left h1 {
+        font-size: 24px;
+    }
+
+    .intro-left .bio {
+        margin: 24px 0;
+        letter-spacing: 0.28px;
+        font-size: 16px;
+    }
+
+    .connect {
+        font-size: 14px;
+    }
+
+    .intro-right {
+        max-width: 320px;
+    }
+
+    .intro-right .cta {
+        font-size: 14px;
+    }
+
+    .resume-button {
+        font-size: 14px;
+    }
+
+    /* Worked For adjustments */
+    #worked-for {
+        padding: 32px 0px;
+    }
+
+    .worked-for-grid {
+        display: none;
+    }
+
+    .worked-for-mobile {
+        display: flex;
+    }
+
+    /* Projects adjustments */
+    .project {
+        flex: 1 1 320px;
+    }
+
+    .project h3 {
+        font-size: 22px;
+    }
+
+    .project p {
+        letter-spacing: 0.24px;
+        font-size: 14px;
+    }
+
+    .projects-grid {
+        gap: 24px;
+    }
+
+    .project img {
+        height: 80px;
+    }
+
+    .carousel-arrows {
+        display: flex;
+    }
+
+/* ============================================= */
 /*              MOBILE MEDIA QUERY               */
 /*              (max-width: 320px)               */
 /* ============================================= */
