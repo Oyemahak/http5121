@@ -190,15 +190,16 @@
 
     <!-- Mobile Menu Script -->
     <script>
-        const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
-        const desktopMenu = document.querySelector('.desktop-menu');
-
-        mobileMenuIcon.addEventListener('click', () => {
-            const isExpanded = desktopMenu.classList.toggle('active');
-            mobileMenuIcon.setAttribute('aria-expanded', isExpanded);
-            mobileMenuIcon.setAttribute('aria-label',
-                isExpanded ? 'Close menu' : 'Open menu');
-        });
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.querySelector('.mobile-menu-icon');
+    const menu = document.querySelector('.desktop-menu');
+    
+    menuButton.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('active');
+        menuButton.setAttribute('aria-expanded', isOpen);
+        menuButton.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+    });
+});
     </script>
 </body>
 
