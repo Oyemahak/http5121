@@ -1,0 +1,52 @@
+/* 
+ * Double triangle shape created using CSS borders
+ * Non-circular shape that will be clearly visible when rotating 
+ */
+ .double-triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #5534db;
+    border-top: 100px solid #5534db;
+    margin: 50px auto;
+    /* Transition for transform and color changes */
+    transition: transform 1s ease-in-out, border-color 1s ease-in-out;
+}
+
+/* Basic button styling */
+button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    /* Transition for all animatable properties */
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Hover state - changes required by the lab:
+   1. Background color change
+   2. Transform (scale and translate)
+   3. Box shadow (visual effect) */
+button:hover {
+    background-color: #000000;
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* 
+ * Animation class added via JavaScript
+ * - Rotates 1080deg (3 full rotations)
+ * - Scales up 1.5x
+ * - Changes color to red
+ */
+.spin {
+    transform: rotate(1080deg) scale(1.5);
+    border-bottom-color: #ff0000;
+    border-top-color: #ff0000;
+}
