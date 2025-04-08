@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills | Dark Portfolio</title>
+    <style>
+        :root {
+            --primary: #0ff;
+            --secondary: #f0f;
+            --bg: #121212;
+            --card-bg: #1a1a1a;
+            --text: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.1) 0%, transparent 20%);
+            pointer-events: none;
+            z-index: -1;
+            animation: pulse 15s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+
+        .skills-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            animation: titleUnderline 3s infinite;
+        }
+
+        @keyframes titleUnderline {
+            0%, 100% { background-size: 0% 100%; }
+            50% { background-size: 100% 100%; }
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-card::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--primary));
+            background-size: 200% 200%;
+            border-radius: 12px;
+            opacity: 0;
+            transition: 0.5s;
+            animation: gradient 3s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .skill-card:hover::before {
+            opacity: 0.7;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 1rem;
+            object-fit: contain;
+            filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: rotate(15deg) scale(1.1);
+            animation: iconFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0) rotate(15deg) scale(1.1); }
+            50% { transform: translateY(-10px) rotate(15deg) scale(1.1); }
+        }
+
+        .skill-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .skill-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .skill-level {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .skill-level-bar {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            position: relative;
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+
+        .skill-level-bar::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                            rgba(255, 255, 255, 0.8) 0%, 
+                            rgba(255, 255, 255, 0) 50%, 
+                            rgba(255, 255, 255, 0.8) 100%);
+            background-size: 200% 100%;
+            animation: shine 2s infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes shine {
+            0% { background-position: -100% 0; }
+            100% { background-position: 100% 0; }
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(0, 255, 255, 0.3);
+            transform: scale(1.1);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        /* Circuit board connections */
+        .circuit-connections {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .circuit-line {
+            position: absolute;
+            background: rgba(0, 255, 255, 0.1);
+            transform-origin: left center;
+            height: 2px;
+            transition: all 0.5s ease;
+        }
+
+        .skill-card:hover ~ .circuit-connections .circuit-line {
+            background: rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        /* Constellation effect */
+        .constellation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .skill-card:hover {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="skills-section">
+        <h2 class="section-title">My Skills</h2>
+        
+        <div class="skills-container">
+            <!-- Skill Card 1 -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="skill-icon">
+                    <h3 class="skill-name">HTML5</h3>
+                </div>
+                <p class="skill-description">
+                    Semantic markup, accessibility standards, and modern HTML5 APIs.
+                </p>
+                <div class="skill-level">
+                    <div class="skill-level-bar" data-level="95"></div>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Semantic HTML</span>
+                    <span class="skill-tag">SEO</span>
+                    <span class="skill-tag">Web Components</span>
+                </div>
+            </div>
+            
+            <!-- Skill Card 2 -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="skill-icon">
+                    <h3 class="skill-name">CSS3</h3>
+                </div>
+                <p class="skill-description">
+                    Advanced animations, responsive design, and modern layout techniques.
+                </p>
+                <div class="skill-level">
+                    <div class="skill-level-bar" data-level="90"></div>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Animations</span>
+                    <span class="skill-tag">Flexbox/Grid</span>
+                    <span class="skill-tag">Sass</span>
+                </div>
+            </div>
+            
+            <!-- Skill Card 3 -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon">
+                    <h3 class="skill-name">JavaScript</h3>
+                </div>
+                <p class="skill-description">
+                    ES6+, DOM manipulation, async programming, and modern frameworks.
+                </p>
+                <div class="skill-level">
+                    <div class="skill-level-bar" data-level="85"></div>
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">ES6+</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                </div>
+            </div>
+            
+            <!-- Circuit connections (dynamically generated via JS) -->
+            <div class="circuit-connections" id="circuitConnections"></div>
+            
+            <!-- Constellation background -->
+            <div class="constellation" id="constellation"></div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate skill level bars
+            const levelBars = document.querySelectorAll('.skill-level-bar');
+            levelBars.forEach(bar => {
+                const level = bar.getAttribute('data-level');
+                bar.style.width = `${level}%`;
+            });
+            
+            // Create constellation
+            const constellation = document.getElementById('constellation');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                star.style.opacity = Math.random();
+                constellation.appendChild(star);
+            }
+            
+            // Create circuit connections between cards
+            const container = document.querySelector('.skills-container');
+            const cards = document.querySelectorAll('.skill-card');
+            const circuitConnections = document.getElementById('circuitConnections');
+            
+            cards.forEach((card1, i) => {
+                cards.forEach((card2, j) => {
+                    if (i < j) { // Avoid duplicate connections
+                        const rect1 = card1.getBoundingClientRect();
+                        const rect2 = card2.getBoundingClientRect();
+                        
+                        const x1 = rect1.left + rect1.width/2 - container.getBoundingClientRect().left;
+                        const y1 = rect1.top + rect1.height/2 - container.getBoundingClientRect().top;
+                        const x2 = rect2.left + rect2.width/2 - container.getBoundingClientRect().left;
+                        const y2 = rect2.top + rect2.height/2 - container.getBoundingClientRect().top;
+                        
+                        // Distance between cards
+                        const distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+                        
+                        // Only connect relatively close cards
+                        if (distance < 300) {
+                            const angle = Math.atan2(y2 - y1, x2 - x1);
+                            
+                            const line = document.createElement('div');
+                            line.classList.add('circuit-line');
+                            line.style.width = `${distance}px`;
+                            line.style.left = `${x1}px`;
+                            line.style.top = `${y1}px`;
+                            line.style.transform = `rotate(${angle}rad)`;
+                            
+                            circuitConnections.appendChild(line);
+                            
+                            // Make connections interactive
+                            card1.addEventListener('mouseenter', () => {
+                                line.style.background = `rgba(0, 255, 255, 0.3)`;
+                                line.style.boxShadow = `0 0 5px var(--primary)`;
+                            });
+                            
+                            card1.addEventListener('mouseleave', () => {
+                                line.style.background = `rgba(0, 255, 255, 0.1)`;
+                                line.style.boxShadow = `none`;
+                            });
+                            
+                            card2.addEventListener('mouseenter', () => {
+                                line.style.background = `rgba(0, 255, 255, 0.3)`;
+                                line.style.boxShadow = `0 0 5px var(--primary)`;
+                            });
+                            
+                            card2.addEventListener('mouseleave', () => {
+                                line.style.background = `rgba(0, 255, 255, 0.1)`;
+                                line.style.boxShadow = `none`;
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Add floating particles
+            const floatingParticles = () => {
+                const particles = [];
+                const colors = ['rgba(0, 255, 255, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(255, 255, 255, 0.5)'];
+                
+                for (let i = 0; i < 20; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.position = 'fixed';
+                    particle.style.width = `${Math.random() * 5 + 2}px`;
+                    particle.style.height = particle.style.width;
+                    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.borderRadius = '50%';
+                    particle.style.left = `${Math.random() * 100}vw`;
+                    particle.style.top = `${Math.random() * 100}vh`;
+                    particle.style.pointerEvents = 'none';
+                    particle.style.zIndex = '-1';
+                    document.body.appendChild(particle);
+                    
+                    particles.push({
+                        element: particle,
+                        x: parseFloat(particle.style.left),
+                        y: parseFloat(particle.style.top),
+                        speedX: (Math.random() - 0.5) * 0.2,
+                        speedY: (Math.random() - 0.5) * 0.2
+                    });
+                }
+                
+                const animateParticles = () => {
+                    particles.forEach(particle => {
+                        particle.x += particle.speedX;
+                        particle.y += particle.speedY;
+                        
+                        // Bounce off edges
+                        if (particle.x <= 0 || particle.x >= 100) particle.speedX *= -1;
+                        if (particle.y <= 0 || particle.y >= 100) particle.speedY *= -1;
+                        
+                        particle.element.style.left = `${particle.x}vw`;
+                        particle.element.style.top = `${particle.y}vh`;
+                    });
+                    
+                    requestAnimationFrame(animateParticles);
+                };
+                
+                animateParticles();
+            };
+            
+            floatingParticles();
+        });
+    </script>
+</body>
+</html>
