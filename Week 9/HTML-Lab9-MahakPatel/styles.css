@@ -1,0 +1,53 @@
+/* Sky container styling */
+#frame {
+    height: 300px;
+    width: 100%;
+    position: relative;       /* Needed for absolute sun positioning */
+    overflow: hidden;
+    background-color: #1c1341; /* Night color */
+    animation: sky 8s infinite; /* Sky color animation */
+    margin-top: 10px;
+}
+
+/* Sun element styling */
+#sun {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;      /* Circular shape */
+    background-color: red;    /* Sunrise/sunset color */
+    animation: sun 8s infinite; /* Sun movement animation */
+}
+
+/* Sun movement path */
+@keyframes sun {
+    0% {
+        bottom: -75px;       /* Starts below horizon */
+        right: 0;
+        background-color: red;
+    }
+    50% {
+        bottom: calc(100% - 75px); /* Reaches highest point */
+        right: calc(50% - 37.5px); /* Center horizontally */
+        background-color: yellow; /* Noon color */
+    }
+    100% {
+        bottom: -75px;       /* Sets below horizon */
+        right: calc(100% - 75px);
+        background-color: orangered;
+    }
+}
+
+/* Sky color transitions */
+@keyframes sky {
+    0% { background-color: #1c1341; } 
+    25% { background-color: darkorange; }
+    50% { background-color: skyblue; } 
+    75% { background-color: crimson; } 
+    100% { background-color: #1c1341; } 
+}
+
+/* Play/Pause button styling */
+#toggle-btn {
+    display: block;
+}
