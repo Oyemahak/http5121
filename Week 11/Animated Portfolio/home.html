@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahak Patel - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="default-theme">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header with Menu -->
     <header>
         <div class="header-grid">
@@ -16,9 +23,7 @@
                 <img class="logo" src="images/Logo.png"
                     alt="Mahak Patel's portfolio logo - Initials MP in a modern design">
             </div>
-            <!-- Add this inside your header, right after the nav -->
             <div class="header-col role-col">
-                <!-- <p class="role">Web Developer</p> -->
                 <div class="theme-switcher">
                     <button class="theme-btn active" data-theme="default" aria-label="Default Theme">
                         <i class="fas fa-moon"></i>
@@ -47,12 +52,12 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- First Section: Two-Column Layout -->
         <section id="intro">
             <div class="intro-left">
                 <h1>Mahak Patel</h1>
-                <p class="bio">I’m a <span class="highlight">Web Developer</span> and <span class="highlight">UI/UX
+                <p class="bio">I'm a <span class="highlight">Web Developer</span> and <span class="highlight">UI/UX
                         designer</span> who builds functional, stylish, and goal-driven digital experiences. I make sure
                     every design is implementable and every website delivers results.</p>
                 <p class="bio"><i>Scroll Down</i> to explore my projects and see how I bring creativity and precision to
@@ -62,29 +67,18 @@
                 <div class="connect-container">
                     <p class="connect">Connect with me:</p>
                     <div class="social-icons">
-                        <a href="https://github.com/Oyemahak"><i class="fab fa-github"></i></a>
-                        <a href="https://www.instagram.com/oyemahak/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/mahak-patel-167640150/"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:mahakpateluux@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/Oyemahak" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/oyemahak/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/mahak-patel-167640150/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:mahakpateluux@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
             <div class="intro-right">
                 <img src="images/profile-image.png" alt="Professional web developer and UI/UX designer illustration">
-                <p class="cta">I don’t just build websites—I build solutions that work, look great, and get the job
+                <p class="cta">I don't just build websites—I build solutions that work, look great, and get the job
                     done.
                 </p>
-                <!-- <div class="theme-switcher">
-                    <button class="theme-btn active" data-theme="default" aria-label="Default Theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <button class="theme-btn" data-theme="snow" aria-label="Snow Theme">
-                        <i class="fas fa-snowflake"></i>
-                    </button>
-                    <button class="theme-btn" data-theme="rain" aria-label="Rain Theme">
-                        <i class="fas fa-cloud-rain"></i>
-                    </button>
-                </div> -->
             </div>
         </section>
 
@@ -110,7 +104,7 @@
                             alt="Canstem Education Private School logo - An ongoing website and digital services project for an educational institution">
                     </div>
                 </div>
-                <!-- Carousel Arrows for Mobile. Using HTML entity (>) & (<)for right & left Carousel - lightweight and accessible -->
+                <!-- Carousel Arrows for Mobile -->
                 <div class="carousel-arrows">
                     <button class="arrow-left">&#10094;</button>
                     <!-- Worked for Mobile -->
@@ -177,7 +171,7 @@
                 <form>
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Hey, what’s your first name?">
+                        <input type="text" id="name" name="name" placeholder="Hey, what's your first name?">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -211,8 +205,9 @@
         <p class="copyright">© 2024 Mahak Patel. All rights reserved.</p>
     </footer>
 
-    <!-- Mobile Menu Script -->
+    <!-- JavaScript for Theme Switching and Mobile Menu -->
     <script>
+        // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', () => {
             const menuButton = document.querySelector('.mobile-menu-icon');
             const menu = document.querySelector('.desktop-menu');
@@ -222,20 +217,18 @@
                 menuButton.setAttribute('aria-expanded', isOpen);
                 menuButton.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
             });
-        });
 
-        // Theme Switcher with Improved Effects
-        document.addEventListener('DOMContentLoaded', function () {
+            // Theme Switcher with Improved Effects
             const themeBtns = document.querySelectorAll('.theme-btn');
             const savedTheme = localStorage.getItem('portfolio-theme') || 'default';
 
             // Initialize with saved theme
-            document.body.classList.add(`${savedTheme}-theme`);
+            document.body.className = `${savedTheme}-theme`;
             document.querySelector(`[data-theme="${savedTheme}"]`).classList.add('active');
 
             // Remove all weather effects
             function clearEffects() {
-                document.querySelectorAll('.snowflake, .raindrop, .ripple').forEach(el => el.remove());
+                document.querySelectorAll('.snowflake, .raindrop, .ripple, .star').forEach(el => el.remove());
             }
 
             // Create snow effect
@@ -248,7 +241,7 @@
                     snowflake.style.left = `${Math.random() * 100}vw`;
                     snowflake.style.top = `${Math.random() * -100}px`;
                     snowflake.style.opacity = Math.random();
-                    snowflake.style.animationDuration = `${5 + Math.random() * 10}s`;
+                    snowflake.style.animationDuration = `${8 + Math.random() * 15}s`; // Slower snow
                     snowflake.style.fontSize = `${0.5 + Math.random()}em`;
                     document.body.appendChild(snowflake);
                 }
@@ -257,14 +250,14 @@
             // Create rain effect
             function createRain() {
                 clearEffects();
-                for (let i = 0; i < 100; i++) {
+                for (let i = 0; i < 60; i++) { // Fewer raindrops for better performance
                     // Raindrops
                     const raindrop = document.createElement('div');
                     raindrop.className = 'raindrop';
                     raindrop.style.left = `${Math.random() * 100}vw`;
                     raindrop.style.top = `${Math.random() * -100}px`;
                     raindrop.style.height = `${10 + Math.random() * 20}px`;
-                    raindrop.style.animationDuration = `${0.5 + Math.random() * 0.5}s`;
+                    raindrop.style.animationDuration = `${1 + Math.random() * 1.5}s`; // Slower rain
                     document.body.appendChild(raindrop);
 
                     // Ripples (created by rain)
@@ -279,6 +272,22 @@
                             document.body.appendChild(ripple);
                         }, parseFloat(raindrop.style.animationDuration) * 1000 * 0.9);
                     }
+                }
+            }
+
+            // Create stars for night theme
+            function createStars() {
+                clearEffects();
+                for (let i = 0; i < 100; i++) {
+                    const star = document.createElement('div');
+                    star.className = 'star';
+                    star.style.left = `${Math.random() * 100}vw`;
+                    star.style.top = `${Math.random() * 100}vh`;
+                    star.style.width = `${1 + Math.random() * 3}px`;
+                    star.style.height = star.style.width;
+                    star.style.animationDuration = `${3 + Math.random() * 5}s`;
+                    star.style.animationDelay = `${Math.random() * 5}s`;
+                    document.body.appendChild(star);
                 }
             }
 
@@ -299,6 +308,7 @@
                     // Create effects
                     if (theme === 'snow') createSnow();
                     else if (theme === 'rain') createRain();
+                    else if (theme === 'default') createStars();
                     else clearEffects();
                 });
             });
@@ -306,6 +316,7 @@
             // Initialize effects if needed
             if (savedTheme === 'snow') createSnow();
             else if (savedTheme === 'rain') createRain();
+            else if (savedTheme === 'default') createStars();
         });
     </script>
 </body>
