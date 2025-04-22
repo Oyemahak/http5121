@@ -205,120 +205,69 @@
         <p class="copyright">© 2024 Mahak Patel. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Theme Switching and Mobile Menu -->
-    <script>
-        // Mobile Menu Toggle
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuButton = document.querySelector('.mobile-menu-icon');
-            const menu = document.querySelector('.desktop-menu');
-
-            menuButton.addEventListener('click', () => {
-                const isOpen = menu.classList.toggle('active');
-                menuButton.setAttribute('aria-expanded', isOpen);
-                menuButton.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
-            });
-
-            // Theme Switcher with Improved Effects
-            const themeBtns = document.querySelectorAll('.theme-btn');
-            const savedTheme = localStorage.getItem('portfolio-theme') || 'default';
-
-            // Initialize with saved theme
-            document.body.className = `${savedTheme}-theme`;
-            document.querySelector(`[data-theme="${savedTheme}"]`).classList.add('active');
-
-            // Remove all weather effects
-            function clearEffects() {
-                document.querySelectorAll('.snowflake, .raindrop, .ripple, .star').forEach(el => el.remove());
-            }
-
-            // Create snow effect
-            function createSnow() {
-                clearEffects();
-                for (let i = 0; i < 50; i++) {
-                    const snowflake = document.createElement('div');
-                    snowflake.className = 'snowflake';
-                    snowflake.innerHTML = '❄';
-                    snowflake.style.left = `${Math.random() * 100}vw`;
-                    snowflake.style.top = `${Math.random() * -100}px`;
-                    snowflake.style.opacity = Math.random();
-                    snowflake.style.animationDuration = `${8 + Math.random() * 15}s`; // Slower snow
-                    snowflake.style.fontSize = `${0.5 + Math.random()}em`;
-                    document.body.appendChild(snowflake);
-                }
-            }
-
-            // Create rain effect
-            function createRain() {
-                clearEffects();
-                for (let i = 0; i < 60; i++) { // Fewer raindrops for better performance
-                    // Raindrops
-                    const raindrop = document.createElement('div');
-                    raindrop.className = 'raindrop';
-                    raindrop.style.left = `${Math.random() * 100}vw`;
-                    raindrop.style.top = `${Math.random() * -100}px`;
-                    raindrop.style.height = `${10 + Math.random() * 20}px`;
-                    raindrop.style.animationDuration = `${1 + Math.random() * 1.5}s`; // Slower rain
-                    document.body.appendChild(raindrop);
-
-                    // Ripples (created by rain)
-                    if (i % 5 === 0) {
-                        setTimeout(() => {
-                            const ripple = document.createElement('div');
-                            ripple.className = 'ripple';
-                            ripple.style.left = `${parseFloat(raindrop.style.left) - 10}px`;
-                            ripple.style.top = '90vh';
-                            ripple.style.width = '20px';
-                            ripple.style.height = '20px';
-                            document.body.appendChild(ripple);
-                        }, parseFloat(raindrop.style.animationDuration) * 1000 * 0.9);
-                    }
-                }
-            }
-
-            // Create stars for night theme
-            function createStars() {
-                clearEffects();
-                for (let i = 0; i < 100; i++) {
-                    const star = document.createElement('div');
-                    star.className = 'star';
-                    star.style.left = `${Math.random() * 100}vw`;
-                    star.style.top = `${Math.random() * 100}vh`;
-                    star.style.width = `${1 + Math.random() * 3}px`;
-                    star.style.height = star.style.width;
-                    star.style.animationDuration = `${3 + Math.random() * 5}s`;
-                    star.style.animationDelay = `${Math.random() * 5}s`;
-                    document.body.appendChild(star);
-                }
-            }
-
-            // Theme switching logic
-            themeBtns.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    const theme = this.dataset.theme;
-
-                    // Update active button
-                    themeBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-
-                    // Update body class
-                    document.body.className = '';
-                    document.body.classList.add(`${theme}-theme`);
-                    localStorage.setItem('portfolio-theme', theme);
-
-                    // Create effects
-                    if (theme === 'snow') createSnow();
-                    else if (theme === 'rain') createRain();
-                    else if (theme === 'default') createStars();
-                    else clearEffects();
-                });
-            });
-
-            // Initialize effects if needed
-            if (savedTheme === 'snow') createSnow();
-            else if (savedTheme === 'rain') createRain();
-            else if (savedTheme === 'default') createStars();
-        });
-    </script>
+    <!-- JavaScript Files -->
+    <script src="script.js"></script>
+    
+    <!-- Lightning effect styles -->
+    <style>
+        .lightning {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            opacity: 0;
+            pointer-events: none;
+            z-index: -1;
+            transition: opacity 0.3s;
+        }
+        
+        .moon {
+            position: fixed;
+            right: 50px;
+            top: 50px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #f5f3ce;
+            box-shadow: 0 0 30px #f5f3ce88;
+            z-index: -1;
+            animation: moonGlow 4s infinite alternate;
+        }
+        
+        .moon::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #101827;
+        }
+        
+        @keyframes moonGlow {
+            0% { box-shadow: 0 0 20px #f5f3ce88; }
+            100% { box-shadow: 0 0 40px #f5f3cecc; }
+        }
+        
+        .star {
+            position: fixed;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite alternate;
+            pointer-events: none;
+            z-index: -1;
+            filter: blur(0.5px);
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0.3; transform: scale(0.9); }
+        }
+    </style>
 </body>
 
 </html>
