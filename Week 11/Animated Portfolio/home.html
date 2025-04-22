@@ -16,8 +16,20 @@
                 <img class="logo" src="images/Logo.png"
                     alt="Mahak Patel's portfolio logo - Initials MP in a modern design">
             </div>
+            <!-- Add this inside your header, right after the nav -->
             <div class="header-col role-col">
-                <p class="role">Web Developer</p>
+                <!-- <p class="role">Web Developer</p> -->
+                <div class="theme-switcher">
+                    <button class="theme-btn active" data-theme="default" aria-label="Default Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="snow" aria-label="Snow Theme">
+                        <i class="fas fa-snowflake"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="rain" aria-label="Rain Theme">
+                        <i class="fas fa-cloud-rain"></i>
+                    </button>
+                </div>
             </div>
             <div class="header-col nav-col">
                 <nav>
@@ -62,6 +74,17 @@
                 <p class="cta">I don’t just build websites—I build solutions that work, look great, and get the job
                     done.
                 </p>
+                <!-- <div class="theme-switcher">
+                    <button class="theme-btn active" data-theme="default" aria-label="Default Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="snow" aria-label="Snow Theme">
+                        <i class="fas fa-snowflake"></i>
+                    </button>
+                    <button class="theme-btn" data-theme="rain" aria-label="Rain Theme">
+                        <i class="fas fa-cloud-rain"></i>
+                    </button>
+                </div> -->
             </div>
         </section>
 
@@ -199,6 +222,90 @@
                 menuButton.setAttribute('aria-expanded', isOpen);
                 menuButton.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
             });
+        });
+
+        // Theme Switcher with Improved Effects
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeBtns = document.querySelectorAll('.theme-btn');
+            const savedTheme = localStorage.getItem('portfolio-theme') || 'default';
+
+            // Initialize with saved theme
+            document.body.classList.add(`${savedTheme}-theme`);
+            document.querySelector(`[data-theme="${savedTheme}"]`).classList.add('active');
+
+            // Remove all weather effects
+            function clearEffects() {
+                document.querySelectorAll('.snowflake, .raindrop, .ripple').forEach(el => el.remove());
+            }
+
+            // Create snow effect
+            function createSnow() {
+                clearEffects();
+                for (let i = 0; i < 50; i++) {
+                    const snowflake = document.createElement('div');
+                    snowflake.className = 'snowflake';
+                    snowflake.innerHTML = '❄';
+                    snowflake.style.left = `${Math.random() * 100}vw`;
+                    snowflake.style.top = `${Math.random() * -100}px`;
+                    snowflake.style.opacity = Math.random();
+                    snowflake.style.animationDuration = `${5 + Math.random() * 10}s`;
+                    snowflake.style.fontSize = `${0.5 + Math.random()}em`;
+                    document.body.appendChild(snowflake);
+                }
+            }
+
+            // Create rain effect
+            function createRain() {
+                clearEffects();
+                for (let i = 0; i < 100; i++) {
+                    // Raindrops
+                    const raindrop = document.createElement('div');
+                    raindrop.className = 'raindrop';
+                    raindrop.style.left = `${Math.random() * 100}vw`;
+                    raindrop.style.top = `${Math.random() * -100}px`;
+                    raindrop.style.height = `${10 + Math.random() * 20}px`;
+                    raindrop.style.animationDuration = `${0.5 + Math.random() * 0.5}s`;
+                    document.body.appendChild(raindrop);
+
+                    // Ripples (created by rain)
+                    if (i % 5 === 0) {
+                        setTimeout(() => {
+                            const ripple = document.createElement('div');
+                            ripple.className = 'ripple';
+                            ripple.style.left = `${parseFloat(raindrop.style.left) - 10}px`;
+                            ripple.style.top = '90vh';
+                            ripple.style.width = '20px';
+                            ripple.style.height = '20px';
+                            document.body.appendChild(ripple);
+                        }, parseFloat(raindrop.style.animationDuration) * 1000 * 0.9);
+                    }
+                }
+            }
+
+            // Theme switching logic
+            themeBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const theme = this.dataset.theme;
+
+                    // Update active button
+                    themeBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Update body class
+                    document.body.className = '';
+                    document.body.classList.add(`${theme}-theme`);
+                    localStorage.setItem('portfolio-theme', theme);
+
+                    // Create effects
+                    if (theme === 'snow') createSnow();
+                    else if (theme === 'rain') createRain();
+                    else clearEffects();
+                });
+            });
+
+            // Initialize effects if needed
+            if (savedTheme === 'snow') createSnow();
+            else if (savedTheme === 'rain') createRain();
         });
     </script>
 </body>

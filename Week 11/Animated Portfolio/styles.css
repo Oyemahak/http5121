@@ -103,6 +103,105 @@ header {
     cursor: pointer;
 }
 
+/* ===== THEME SWITCHER STYLES ===== */
+.theme-switcher {
+    display: flex;
+    gap: 12px;
+    margin-left: 20px;
+  }
+  
+  .theme-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #60A5FA;
+  }
+  
+  .theme-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+  
+  .theme-btn.active {
+    background: #3B82F6;
+    color: white;
+  }
+  
+  .theme-btn i {
+    font-size: 16px;
+  }
+  
+  /* ===== BACKGROUND THEMES ===== */
+  /* Snow Theme Elements */
+  .snowflake {
+    position: fixed;
+    color: white;
+    font-size: 1em;
+    animation: snow linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  @keyframes snow {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+  
+  /* Rain Theme Elements */
+  .raindrop {
+    position: fixed;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, rgba(174, 194, 224, 0.6));
+    animation: rain linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  @keyframes rain {
+    to {
+      transform: translateY(100vh);
+    }
+  }
+  
+  .ripple {
+    position: fixed;
+    border-radius: 50%;
+    background: rgba(174, 194, 224, 0.3);
+    animation: ripple 1s ease-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  @keyframes ripple {
+    to {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+  
+  /* Default Theme (your existing dark theme) */
+  .default-theme {
+    background-color: #101827;
+  }
+  
+  /* Snow Theme */
+  .snow-theme {
+    background: linear-gradient(to bottom, #0f172a, #1e3a8a);
+  }
+  
+  /* Rain Theme */
+  .rain-theme {
+    background: linear-gradient(to bottom, #1e293b, #0f172a);
+  }
+
 /* ============================================= */
 /*              INTRODUCTION SECTION             */
 /* ============================================= */
