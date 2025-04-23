@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, parseFloat(raindrop.style.animationDuration) * 1000 * 0.9);
             }
         }
-        
+
         // Add lightning element (hidden by default)
         const lightning = document.createElement('div');
         lightning.className = 'lightning';
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Lightning effect on resume button hover for rain theme
     if (resumeButton) {
-        resumeButton.addEventListener('mouseenter', function() {
+        resumeButton.addEventListener('mouseenter', function () {
             if (document.body.classList.contains('rain-theme')) {
                 const lightning = document.querySelector('.lightning');
                 if (lightning) {
@@ -142,9 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme switching logic
     themeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             const theme = this.dataset.theme;
-            
+
             // Update active button
             themeBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (theme === 'snow') {
                 createStars(150, 2); // Fewer, smaller stars for snow theme
                 createSnow();
-            } 
+            }
             else if (theme === 'rain') {
                 createRain();
             }
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedTheme === 'snow') {
         createStars(150, 2);
         createSnow();
-    } 
+    }
     else if (savedTheme === 'rain') {
         createRain();
     }
