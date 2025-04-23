@@ -4,8 +4,17 @@
 /* Implemented for HTTP5121 CSS Animation Project */
 /* Features 10+ meaningful animations across 3 themes */
 
-/* ===== BASE THEME ELEMENTS ===== */
-/* Default night theme elements */
+/* ===== ACCESSIBILITY: REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0s !important;
+    }
+  }
 
 /* ============================================= */
 /*              THEME SWITCHER STYLES           */
@@ -44,6 +53,9 @@
 .theme-btn i {
     font-size: 16px;
 }
+
+/* ===== BASE THEME ELEMENTS ===== */
+/* Default night theme elements */
 
 .default-theme {
     background-color: #101827;
