@@ -137,6 +137,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 200);
                 }
             }
+            // Enhanced star sparkle on resume hover (default theme)
+            resumeButton.addEventListener('mouseenter', function () {
+                if (document.body.classList.contains('default-theme')) {
+                    document.querySelectorAll('.star').forEach(star => {
+                        star.style.animationDuration = '0.8s'; // Faster twinkle
+                    });
+                }
+            });
+
+            resumeButton.addEventListener('mouseleave', function () {
+                if (document.body.classList.contains('default-theme')) {
+                    document.querySelectorAll('.star').forEach(star => {
+                        star.style.animationDuration = `${2 + Math.random() * 5}s`; // Reset to normal speed
+                    });
+                }
+            });
+
         });
     }
 

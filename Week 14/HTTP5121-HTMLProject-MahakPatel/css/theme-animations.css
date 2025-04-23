@@ -225,18 +225,19 @@
 
 @keyframes twinkle {
     0% {
-        opacity: 0.3;
-        transform: scale(0.9);
+        opacity: 0.4;
+        transform: scale(0.95);
+        filter: brightness(1);
     }
-
     50% {
         opacity: 1;
-        transform: scale(1.1);
+        transform: scale(1.15);
+        filter: brightness(1.8); /* Brighter glow */
     }
-
     100% {
-        opacity: 0.3;
-        transform: scale(0.9);
+        opacity: 0.4;
+        transform: scale(0.95);
+        filter: brightness(1);
     }
 }
 
