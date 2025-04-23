@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Create moon for night theme
-    function createMoon() {
-        const moon = document.createElement('div');
-        moon.className = 'moon';
-        document.body.appendChild(moon);
-    }
+            // Create moon for night theme
+            function createMoon() {
+                const moon = document.createElement('div');
+                moon.className = 'moon';
+                document.body.appendChild(moon);
+            }
 
     // Create snow effect
     function createSnow() {
