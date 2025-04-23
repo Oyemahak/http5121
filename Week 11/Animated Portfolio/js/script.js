@@ -2,12 +2,11 @@
  * HTTP5121 CSS Animation Project
  * Weather-Themed Interactive Portfolio
  * 
- * Enhanced with:
- * - Moon with craters for night theme
- * - Lightning effects for rain theme
- * - Enhanced star effects for night theme
- * - Icy button effects for snow theme
- * - Theme-specific hover animations
+ * Main JavaScript for theme switching functionality
+ * All animations are handled via CSS - this only handles:
+ * - Theme switching logic
+ * - Creating/destroying theme elements
+ * - Mobile menu toggle
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,17 +20,24 @@ document.addEventListener('DOMContentLoaded', () => {
         menuButton.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
     });
 
-    // Theme Switcher with Enhanced Effects
+    // Theme Switcher Implementation
     const themeBtns = document.querySelectorAll('.theme-btn');
     const savedTheme = localStorage.getItem('portfolio-theme') || 'default';
     const resumeButton = document.querySelector('.resume-button');
 
-    // Remove all weather effects
+    /**
+     * Clears all weather effects from the page
+     * (Removes all dynamically created elements)
+     */
     function clearEffects() {
         document.querySelectorAll('.snowflake, .raindrop, .ripple, .star, .moon, .lightning').forEach(el => el.remove());
     }
 
-    // Create enhanced stars
+    /**
+     * Creates stars for the night theme
+     * @param {number} count - Number of stars to create
+     * @param {number} sizeVariation - Max size variation for stars
+     */
     function createStars(count = 200, sizeVariation = 3) {
         for (let i = 0; i < count; i++) {
             const star = document.createElement('div');
@@ -48,14 +54,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-            // Create moon for night theme
-            function createMoon() {
-                const moon = document.createElement('div');
-                moon.className = 'moon';
-                document.body.appendChild(moon);
-            }
+    /**
+     * Creates moon element for night theme
+     */
+    function createMoon() {
+        const moon = document.createElement('div');
+        moon.className = 'moon';
+        document.body.appendChild(moon);
+    }
 
-    // Create snow effect
+    /**
+     * Creates snowflakes for snow theme
+     */
     function createSnow() {
         for (let i = 0; i < 50; i++) {
             const snowflake = document.createElement('div');
@@ -70,8 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Create rain effect with lightning element
+    /**
+     * Creates rain effects for rain theme
+     * Includes raindrops and ripple effects
+     */
     function createRain() {
+        // Create raindrops
         for (let i = 0; i < 60; i++) {
             const raindrop = document.createElement('div');
             raindrop.className = 'raindrop';
@@ -81,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             raindrop.style.animationDuration = `${1 + Math.random() * 1.5}s`;
             document.body.appendChild(raindrop);
 
+            // Create ripple effects for some raindrops
             if (i % 5 === 0) {
                 setTimeout(() => {
                     const ripple = document.createElement('div');
@@ -139,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add(`${theme}-theme`);
             localStorage.setItem('portfolio-theme', theme);
 
-            // Create effects
+            // Create theme-specific effects
             clearEffects();
             if (theme === 'snow') {
                 createStars(150, 2); // Fewer, smaller stars for snow theme
@@ -159,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.className = `${savedTheme}-theme`;
     document.querySelector(`[data-theme="${savedTheme}"]`).classList.add('active');
 
+    // Initialize theme effects
     if (savedTheme === 'snow') {
         createStars(150, 2);
         createSnow();
